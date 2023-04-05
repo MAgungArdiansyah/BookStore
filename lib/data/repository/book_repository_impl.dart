@@ -1,12 +1,10 @@
+import 'package:bookstore/data/datasource/book_datasource_dio.dart';
 import 'package:bookstore/data/model/book_respone_model.dart';
 import 'package:bookstore/domain/repository/book_repository.dart';
 
 class BookRepositoryImpl implements BookRepository {
-  @override
-  Future<BookResponeModel> getallNewBook() {
-    BookResponeModel bookResponeModel =
-        BookResponeModel(books: [], error: "0", total: "20");
+  final BookDatasourceDio _datasourceDio = BookDatasourceDio();
 
-    Map<String, dynamic> bookResponseMap = {};
-  }
+  @override
+  Future<BookResponeModel> getallNewBook() async => await _datasourceDio.getBooks();
 }
