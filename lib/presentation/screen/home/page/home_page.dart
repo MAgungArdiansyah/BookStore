@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: GetBuilder<HomeController>(
         init: _controller,
-        initState: (state) => _controller,
+        initState: (state) => _controller.getBooks(),
         builder: (context) {
           return ListView.builder(
             itemCount: _controller.listofBooks.value.length,

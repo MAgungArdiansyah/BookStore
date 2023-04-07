@@ -8,8 +8,7 @@ class BookDatasourceDio {
     try {
       final urlPath = Constants.allNewBook;
 
-      final respone = await _client.get(urlPath).whenComplete(() => print('done'));
-
+      final respone = await _client.get(urlPath);
 
       if (respone.statusCode == 200) {
         return BookResponeModel.fromJson(respone.data);
